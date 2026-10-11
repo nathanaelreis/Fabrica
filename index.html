@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer"><title>Fábrica · Fábrica</title><style>
+:root{--bg0:#040a1c;--painel:rgba(14,27,64,.78);--borda:rgba(92,140,255,.22);--texto:#e9f0ff;--suave:#8fa3d6;--verde:#27e0a0;--ciano:#22d3ee;--azul:#3b82f6;--roxo:#8b5cf6;--coral:#ff5d7a;--ouro:#ffc83d}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;color:var(--texto);font:16px/1.65 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+ background:radial-gradient(900px 500px at 85% -5%,rgba(44,110,255,.28),transparent 70%),radial-gradient(700px 500px at 0% 100%,rgba(34,211,238,.10),transparent 70%),var(--bg0);background-attachment:fixed}
+a{color:#7fb2ff}
+:focus-visible{outline:2px solid var(--ciano);outline-offset:2px}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:16px 28px;border-bottom:1px solid var(--borda);background:rgba(5,12,32,.6)}
+.marca{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none}
+.marca svg{width:34px;height:34px}
+.marca b{display:block;font-size:18px;line-height:1.1}
+.marca small{color:var(--suave);font-size:11.5px}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{padding:8px 14px;border-radius:10px;color:var(--suave);text-decoration:none;font-size:14.5px}
+nav a:hover{background:rgba(59,130,246,.14);color:var(--texto)}
+nav a[aria-current=page]{background:linear-gradient(90deg,#1fcf95,#27e0a0);color:#04251a;font-weight:700;box-shadow:0 0 18px rgba(39,224,160,.35)}
+main{max-width:880px;margin:0 auto;padding:28px 24px 56px}
+h1{font-size:32px;line-height:1.15;margin:0 0 8px;letter-spacing:-.01em}
+h2{font-size:18px;margin:0 0 10px}
+.card{background:var(--painel);border:1px solid var(--borda);border-radius:14px;padding:22px;margin-bottom:16px;box-shadow:0 12px 34px rgba(0,0,0,.35)}
+.card p{margin:0 0 10px;color:#c5d2f5}.card p:last-child{margin-bottom:0}
+.suave{color:var(--suave)}
+.hero{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:28px 30px;margin-bottom:18px;border:1px solid var(--borda);border-radius:18px;overflow:hidden;
+ background:radial-gradient(420px 240px at 88% 40%,rgba(34,211,238,.28),transparent 70%),linear-gradient(120deg,#0b1d4d,#0a1536 60%,#07112b);box-shadow:0 14px 40px rgba(0,0,0,.4)}
+.hero p{margin:0;color:#b9c8f0;max-width:520px}
+.mascote{width:150px;height:150px;flex:none;filter:drop-shadow(0 0 28px rgba(34,211,238,.35))}
+.olho{transform-box:fill-box;transform-origin:center;animation:pisca 6s infinite}
+@keyframes pisca{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.agentes{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:6px}
+.agente{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--borda);border-radius:10px;background:rgba(4,10,28,.45);font-weight:600;font-size:14.5px}
+.agente svg{width:24px;height:24px;flex:none;fill:var(--cor);filter:drop-shadow(0 0 5px var(--cor))}
+.destaque{border-color:rgba(39,224,160,.55);box-shadow:0 0 28px rgba(39,224,160,.16),0 12px 34px rgba(0,0,0,.35)}
+.erro{border-color:var(--coral)}
+label{display:block;font-weight:600;margin:12px 0 5px;font-size:14px}
+textarea{width:100%;min-height:92px;resize:vertical;background:rgba(4,10,28,.8);color:var(--texto);border:1px solid var(--borda);border-radius:10px;padding:10px 12px;font:13px/1.5 ui-monospace,"Cascadia Mono",Consolas,monospace}
+.btn{display:inline-flex;align-items:center;gap:8px;margin-top:10px;background:var(--verde);color:#04251a;border:0;border-radius:10px;padding:10px 18px;font:inherit;font-weight:700;cursor:pointer;box-shadow:0 0 18px rgba(39,224,160,.28)}
+.btn:hover{filter:brightness(1.08)}
+.btn.sec{background:rgba(59,130,246,.18);color:var(--texto);box-shadow:none;border:1px solid var(--borda)}
+details{margin-top:12px}summary{cursor:pointer;color:var(--suave)}
+ol.passos{padding-left:20px;color:#c5d2f5}ol.passos li{margin:4px 0}
+footer{max-width:880px;margin:0 auto;padding:0 24px 40px;color:var(--suave);font-size:13.5px}
+@media(max-width:760px){.agentes{grid-template-columns:repeat(2,1fr)}.mascote{width:100px;height:100px}h1{font-size:26px}header{padding:12px 16px}main{padding:20px 16px 40px}.hero{padding:20px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head>
+<body><header><a class="marca" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 4h12l12 14-12 18H8z" fill="#2ea0ff"/><path d="M20 4h12L20 36z" fill="#22d3ee" opacity=".85"/></svg><span><b>Fábrica</b><small>o escritório dos agentes</small></span></a><nav><a href="index.html" aria-current="page">Início</a><a href="termos.html">Termos de Serviço</a><a href="privacidade.html">Política de Privacidade</a></nav></header>
+<main>
+
+<section id="retorno" class="card destaque" hidden>
+  <h2>Autorização recebida</h2>
+  <p>Volte ao painel da Fábrica, abra <strong>Conexões &gt; TikTok</strong>, cole a URL abaixo e clique em <strong>Conectar</strong>.
+  O código vale uma vez e expira em poucos minutos.</p>
+  <label for="url-completa">URL completa</label><textarea id="url-completa" readonly></textarea>
+  <button class="btn" id="copiar-url" type="button">Copiar URL completa</button>
+  <details><summary>Prefere só o código?</summary>
+    <label for="so-codigo">Código</label><textarea id="so-codigo" readonly style="min-height:64px"></textarea>
+    <button class="btn sec" id="copiar-codigo" type="button">Copiar código</button></details>
+  <p class="suave" style="margin-top:12px;font-size:14px">Esta página não envia nem guarda nada. Ela apenas mostra o que o TikTok devolveu ao seu navegador.</p>
+</section>
+<section id="retorno-erro" class="card erro" hidden>
+  <h2>O TikTok não concluiu a autorização</h2><p id="erro-texto"></p>
+  <p class="suave" style="font-size:14px">Volte ao painel, gere um novo link de autorização e tente de novo.</p>
+</section>
+<div class="hero"><div><h1>Fábrica</h1>
+<p>Ferramenta <strong>pessoal</strong> de produção de vídeos, executada no computador do próprio criador, com agentes de IA para roteiro, narração, edição, cortes verticais e miniaturas.</p></div><svg class="mascote" viewBox="0 0 200 200" aria-hidden="true"><defs><linearGradient id="gc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1f6ff"/><stop offset="1" stop-color="#8fb4ff"/></linearGradient></defs>
+<line x1="100" y1="24" x2="100" y2="46" stroke="#8fb4ff" stroke-width="5"/><circle cx="100" cy="18" r="8" fill="#22d3ee"/>
+<path d="M38 96a62 62 0 0 1 124 0" fill="none" stroke="#3b82f6" stroke-width="9"/>
+<rect x="28" y="84" width="20" height="46" rx="10" fill="#2563eb"/><rect x="152" y="84" width="20" height="46" rx="10" fill="#2563eb"/>
+<rect x="44" y="46" width="112" height="100" rx="34" fill="url(#gc)"/><rect x="58" y="62" width="84" height="68" rx="24" fill="#0a1230"/>
+<ellipse class="olho" cx="82" cy="95" rx="9" ry="12" fill="#22e5ff"/><ellipse class="olho" cx="118" cy="95" rx="9" ry="12" fill="#22e5ff"/>
+<path d="M90 117q10 7 20 0" stroke="#22e5ff" stroke-width="4" fill="none" stroke-linecap="round"/><rect x="70" y="150" width="60" height="34" rx="14" fill="url(#gc)"/></svg></div>
+<div class="card"><h2>Como funciona</h2>
+<p>O programa roda localmente. Quando o criador autoriza a conexão com o TikTok, o aplicativo envia vídeos <strong>somente para a conta que autorizou</strong>, como rascunho ou publicação, e nada além disso.</p>
+<div class="agentes"><div class="agente" style="--cor:#3b82f6"><svg viewBox="0 0 24 24"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg>Pauta</div><div class="agente" style="--cor:#8b5cf6"><svg viewBox="0 0 24 24"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg>Roteiro</div><div class="agente" style="--cor:#ff5d7a"><svg viewBox="0 0 24 24"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg>Narração</div><div class="agente" style="--cor:#27e0a0"><svg viewBox="0 0 24 24"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg>Cenas</div><div class="agente" style="--cor:#3b82f6"><svg viewBox="0 0 24 24"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg>Montagem</div><div class="agente" style="--cor:#ffc83d"><svg viewBox="0 0 24 24"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg>Cortes</div><div class="agente" style="--cor:#8b5cf6"><svg viewBox="0 0 24 24"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg>Thumbnail</div><div class="agente" style="--cor:#27e0a0"><svg viewBox="0 0 24 24"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg>Agenda</div></div></div>
+<div class="card"><h2>Quem pode usar</h2>
+<p>A ferramenta não é distribuída nem vendida e não possui outros usuários além do próprio criador.</p>
+<p>Leia os <a href="termos.html">Termos de Serviço</a> e a <a href="privacidade.html">Política de Privacidade</a>.</p></div></main>
+<footer>Última atualização: 11 de outubro de 2026. Contato: [SEU E-MAIL AQUI]</footer><script>
+function lerRetorno(busca) {
+  var p = new URLSearchParams(busca);
+  return {codigo: p.get('code'), erro: p.get('error'), desc: p.get('error_description')};
+}
+(function () {
+  var r = lerRetorno(location.search);
+  function copiar(id, botao, rotulo) {
+    var campo = document.getElementById(id);
+    function ok() { botao.textContent = 'Copiado!'; setTimeout(function () { botao.textContent = rotulo; }, 2000); }
+    campo.focus(); campo.select();
+    if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(campo.value).then(ok, function () { document.execCommand('copy'); ok(); }); }
+    else { document.execCommand('copy'); ok(); }
+  }
+  if (r.codigo) {
+    document.getElementById('retorno').hidden = false;
+    document.getElementById('url-completa').value = location.href;
+    document.getElementById('so-codigo').value = r.codigo;
+    var b1 = document.getElementById('copiar-url'), b2 = document.getElementById('copiar-codigo');
+    b1.onclick = function () { copiar('url-completa', b1, 'Copiar URL completa'); };
+    b2.onclick = function () { copiar('so-codigo', b2, 'Copiar código'); };
+    document.getElementById('retorno').scrollIntoView({block: 'start'});
+  } else if (r.erro) {
+    document.getElementById('retorno-erro').hidden = false;
+    document.getElementById('erro-texto').textContent = r.erro + (r.desc ? ': ' + r.desc : '');
+  }
+})();
+</script></body></html>
